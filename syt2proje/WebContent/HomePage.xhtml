@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+ 
+
+<h:head>
+<title>Home</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+	<title>Default title</title>
+	
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></link>
+
+	<!-- Optional theme -->
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"></link>
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</h:head> 
+<body> 
+<h2>SYT DERSİ-2.PROJE</h2>
+   <hr />
+<h:form>
+<h:commandButton class="btn btn-primary" value="Güncelle"  action="#{mailYoklama.readingEmail()}" ></h:commandButton>
+<h:commandButton class="btn btn-primary" value="İşlemler" action="GuncelleSil" />
+<h:commandButton class="btn btn-primary" value="Oto Kontrolü Aktif Et" action="#{login.otoKontrolActivate()}"></h:commandButton>
+<h:commandButton class="btn btn-primary" value="Çıkış" action="Login"></h:commandButton>
+
+</h:form>
+	<h:dataTable value="#{kayıtCek.getKayıtlarTablosu()}" var="yaz">
+            <h:column>
+            	<div class="col-md-6">
+				   <f:facet name="header">
+				       <h:outputLabel>Grup No</h:outputLabel>
+				   </f:facet>
+				   <h:outputLabel value="#{yaz.getGrupNo()}"/>
+				
+	            </div>
+            </h:column>
+            <h:column>
+            	<div class="col-md-6">
+		            <f:facet name="header">
+		                <h:outputLabel>Numara</h:outputLabel>
+		            </f:facet>
+		            <h:outputLabel value="#{yaz.getOgrNo()}"/>
+	            </div>
+            </h:column>
+            <h:column>
+            	<div class="col-md-6">
+		            <f:facet name="header">
+		                <h:outputLabel>Ad-Soyad</h:outputLabel>
+		            </f:facet>
+		            <h:outputLabel value="#{yaz.getAdSoyad()}"/>
+	            </div>
+            </h:column>
+            <h:column>
+            	<div class="col-md-6">
+		            <f:facet name="header">
+		                <h:outputLabel>Not</h:outputLabel>
+		            </f:facet>
+		            <h:outputLabel value="#{yaz.getNot()}"/>
+	            </div>
+            </h:column>
+        </h:dataTable>
+</body> 
+</html>

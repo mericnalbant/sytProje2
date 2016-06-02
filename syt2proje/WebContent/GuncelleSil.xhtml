@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:mj="http://mojarra.dev.java.net/mojarra_ext"> 
+
+<h:head>
+<title>Güncelle-Sil</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+	<title>Default title</title>
+	
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	</link>
+
+	<!-- Optional theme -->
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"></link>
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</h:head> 
+<body> 
+<div class="container">
+	
+			<h:form>
+				<h:panelGrid>
+					<h2>
+						<h:outputLabel value="İşlem yapmak istediğiniz öğrenci numarasını girin:" />
+						<h:inputText id="name" value="#{guncelleSil.ogrNo}"/>
+						<h:outputLabel value="Grup No: " style="font-weight:bold" />
+						<h:inputText id="ogrenciGrupNo" value="#{guncelleSil.ogrGrupNo}" />
+						<h:outputLabel value="Numara: " style="font-weight:bold" />
+						<h:inputText id="ogrenciNo" value="#{guncelleSil.ogrYeniNo}" />
+						<h:outputLabel value="Ad-Soyad: " style="font-weight:bold" />
+						<h:inputText id="ogrenciA" value="#{guncelleSil.ogrAd}"  a:placeholder="Ad:" />
+						<h:inputText id="ogrenciS" value="#{guncelleSil.ogrSoyad}"   a:placeholder="Soyad:"/>
+						<h:outputLabel value="Not: " style="font-weight:bold" />
+						<h:inputText id="OgrenciP" value="#{guncelleSil.puan}" />
+					</h2>
+				</h:panelGrid>
+				<h:commandButton class="btn btn-success" value="Güncelle" action="#{guncelleSil.guncelle()}"></h:commandButton>
+				<h:commandButton class="btn btn-success" value="Sil" action="#{guncelleSil.sil()}"></h:commandButton>
+				<h:commandButton class="btn btn-success" value="Geri" action="HomePage"></h:commandButton>
+			</h:form>
+	
+	</div>
+</body> 
+</html>

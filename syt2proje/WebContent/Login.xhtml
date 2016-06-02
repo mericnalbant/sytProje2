@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core">
+	
+<h:head>
+<title>Login</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+	<title>Default title</title>
+	
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></link>
+
+	<!-- Optional theme -->
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"></link>
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</h:head>
+
+<h:body>
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Sisteme Hoşgeldiniz </h1>
+			<p>
+				<h:form>
+					<p><span class="label label-info">Kullanıcı Adı :</span></p>
+					<h:inputText class="form-control" id="name" value="#{login.userName}" />
+					<br />
+					<p><span class="label label-info">Şifre:</span></p>
+					<h:inputSecret class="form-control" id="password" value="#{login.password}" />
+					<br />
+					<h:commandButton class="btn btn-primary btn-lg" value="Giriş" action="#{login.control()}"/>
+				</h:form>
+			</p>
+		</div>
+
+	</div>
+</h:body>
+</html>
